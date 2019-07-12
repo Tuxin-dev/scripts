@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Create new launcher on Ubuntu
+
+gnome-desktop-item-edit --create-new ~/Bureau
+

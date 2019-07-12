@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# List all recipe and append files used in an image
+# $1 : Image name
+
+if [ "${1}" != "" ]; then
+    bitbake -g ${1} && cat pn-depends.dot | grep -v -e '-native' | grep -v digraph | grep -v -e '-image' | awk '{print $1}' | sort | uniq
+else
+    echo "Syntax Error : $0 <image-name>"
+    echo ""
+fi
